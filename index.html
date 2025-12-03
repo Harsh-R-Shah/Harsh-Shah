@@ -14,9 +14,8 @@
   />
 </head>
 <body>
-  <!-- Navigation -->
   <header class="navbar">
-    <div class="container nav-content">
+    <div class="nav-inner">
       <div class="logo">Harsh<span>Shah</span></div>
       <nav class="nav-links" id="navLinks">
         <a href="#home">Home</a>
@@ -29,173 +28,168 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <p class="hero-tag">Hi, I'm Harsh 👋</p>
-        <h1>Web Developer crafting clean & modern experiences.</h1>
-        <p class="hero-subtitle">
-          I build responsive, user-friendly websites and applications using
-          modern web technologies.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn primary-btn">View Projects</a>
-          <a href="#contact" class="btn ghost-btn">Contact Me</a>
-        </div>
-      </div>
-      <div class="hero-photo">
-        <!-- Replace images/profile.jpg with your own photo -->
-        <img src="images/profile.jpg" alt="Harsh Shah" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="section" id="projects">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <p class="section-subtitle">
-        A selection of work that shows my skills and interests.
-      </p>
-
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <article class="project-card">
-          <h3>Project One</h3>
-          <p>
-            Short description of your project. What it does, tech used, and why
-            it’s cool.
+  <main class="page">
+    <!-- Hero -->
+    <section class="section" id="home">
+      <div class="section-inner">
+        <div class="hero-text fade">
+          <p class="eyebrow">Hi, I’m Harsh 👋</p>
+          <h1>Building clean, responsive web experiences.</h1>
+          <p class="subtitle">
+            Frontend-focused developer who loves simple, fast and user-friendly interfaces.
           </p>
-          <p class="project-tech">HTML • CSS • JavaScript</p>
-          <div class="project-links">
-            <a href="#" target="_blank">Live Demo</a>
-            <a href="#" target="_blank">Source Code</a>
+          <div class="buttons">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn ghost">Contact Me</a>
           </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project-card">
-          <h3>Project Two</h3>
-          <p>
-            Another project highlight. You can replace this with a real one from
-            your GitHub.
-          </p>
-          <p class="project-tech">React • API • GitHub Pages</p>
-          <div class="project-links">
-            <a href="#" target="_blank">Live Demo</a>
-            <a href="#" target="_blank">Source Code</a>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project-card">
-          <h3>Project Three</h3>
-          <p>
-            Add more projects as needed. Keep descriptions short but clear.
-          </p>
-          <p class="project-tech">Node.js • Express</p>
-          <div class="project-links">
-            <a href="#" target="_blank">Live Demo</a>
-            <a href="#" target="_blank">Source Code</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section class="section section-alt" id="skills">
-    <div class="container">
-      <h2 class="section-title">Skills</h2>
-      <p class="section-subtitle">
-        Technologies and tools I work with regularly.
-      </p>
-
-      <div class="skills-grid">
-        <div class="skills-group">
-          <h3>Frontend</h3>
-          <ul>
-            <li>HTML5 / CSS3</li>
-            <li>JavaScript (ES6+)</li>
-            <li>React</li>
-            <li>Responsive Design</li>
-          </ul>
         </div>
-        <div class="skills-group">
-          <h3>Backend</h3>
-          <ul>
-            <li>Node.js</li>
-            <li>Express</li>
-            <li>REST APIs</li>
-          </ul>
-        </div>
-        <div class="skills-group">
-          <h3>Tools & Others</h3>
-          <ul>
-            <li>Git & GitHub</li>
-            <li>VS Code</li>
-            <li>GitHub Pages / Netlify</li>
-          </ul>
+        <div class="hero-photo fade delay">
+          <!-- Put images/profile.jpg in your images folder -->
+          <div class="photo-ring">
+            <img src="images/profile.jpg" alt="Harsh Shah" />
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="scroll-indicator">Scroll ↓</div>
+    </section>
 
-  <!-- About Section -->
-  <section class="section" id="about">
-    <div class="container about-grid">
-      <div>
-        <h2 class="section-title">About Me</h2>
-        <p>
-          I’m a web developer who enjoys turning ideas into real products on the
-          web. I focus on clean, accessible interfaces and writing maintainable
-          code.
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="section-inner fade">
+        <h2>Projects</h2>
+        <p class="subtitle">
+          A snapshot of what I’ve been building recently.
         </p>
-        <p>
-          I'm always learning new technologies and working on projects that
-          challenge me to grow.
-        </p>
-      </div>
-      <div class="about-box">
-        <h3>Quick Facts</h3>
-        <ul>
-          <li>🌍 Based in: (add your city)</li>
-          <li>💼 Open to: Internships / Full-time / Freelance</li>
-          <li>🎯 Interests: Web dev, UI/UX, side projects</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        <div class="cards">
+          <article class="card">
+            <h3>Project One</h3>
+            <p>
+              Short description of your project. What it does and why it’s useful.
+            </p>
+            <p class="tagline">HTML • CSS • JavaScript</p>
+            <div class="card-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">Code</a>
+            </div>
+          </article>
 
-  <!-- Contact Section -->
-  <section class="section section-alt" id="contact">
-    <div class="container contact-section">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-subtitle">
-        Want to work together or just say hi? Reach out!
-      </p>
-      <div class="contact-actions">
-        <!-- Change the email to yours -->
-        <a href="mailto:youremail@example.com" class="btn primary-btn">
-          Email Me
-        </a>
-        <div class="social-links">
-          <!-- Replace # with your actual links -->
-          <a href="#" target="_blank">GitHub</a>
-          <a href="#" target="_blank">LinkedIn</a>
-          <a href="#" target="_blank">Twitter</a>
+          <article class="card">
+            <h3>Project Two</h3>
+            <p>
+              Another project that shows off your skills. Replace this with a real one.
+            </p>
+            <p class="tagline">React • API</p>
+            <div class="card-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">Code</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Project Three</h3>
+            <p>
+              Keep it short and clear. Focus on what you built and the tech used.
+            </p>
+            <p class="tagline">Node.js • Express</p>
+            <div class="card-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">Code</a>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>© <span id="year"></span> Harsh Shah. All rights reserved.</p>
-    </div>
-  </footer>
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="section-inner fade">
+        <h2>Skills</h2>
+        <p class="subtitle">
+          Technologies I work with and enjoy using.
+        </p>
+        <div class="skills-grid">
+          <div class="skill-column">
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML5 / CSS3</li>
+              <li>JavaScript (ES6+)</li>
+              <li>React</li>
+              <li>Responsive Design</li>
+            </ul>
+          </div>
+          <div class="skill-column">
+            <h3>Backend</h3>
+            <ul>
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>REST APIs</li>
+            </ul>
+          </div>
+          <div class="skill-column">
+            <h3>Tools</h3>
+            <ul>
+              <li>Git & GitHub</li>
+              <li>VS Code</li>
+              <li>GitHub Pages / Netlify</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="section-inner fade">
+        <h2>About Me</h2>
+        <p class="subtitle">
+          A bit about who I am and how I like to build things.
+        </p>
+        <div class="about-layout">
+          <div class="about-main">
+            <p>
+              I’m a web developer who enjoys turning ideas into interactive experiences
+              on the browser. I care about code that’s clean, simple and easy to maintain.
+            </p>
+            <p>
+              I’m always experimenting with new tools, frameworks and side projects to
+              push my skills forward.
+            </p>
+          </div>
+          <div class="about-side">
+            <h3>Quick Facts</h3>
+            <ul>
+              <li>📍 Based in: your city</li>
+              <li>💼 Open to: internships / roles / freelance</li>
+              <li>🎯 Interests: UI/UX, frontend, side projects</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="section-inner fade">
+        <h2>Contact</h2>
+        <p class="subtitle">
+          Want to collaborate or just say hi? I’d love to hear from you.
+        </p>
+        <div class="contact-box">
+          <a href="mailto:youremail@example.com" class="btn primary">
+            Email Me
+          </a>
+          <div class="social">
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        © <span id="year"></span> Harsh Shah
+      </footer>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
