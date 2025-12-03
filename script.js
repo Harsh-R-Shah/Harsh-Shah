@@ -7,7 +7,6 @@ if (navToggle && navLinks) {
     navLinks.classList.toggle("show");
   });
 
-  // Close menu when a link is clicked (mobile)
   navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("show");
@@ -15,20 +14,24 @@ if (navToggle && navLinks) {
   });
 }
 
-// Smooth scroll (basic)
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    const targetId = this.getAttribute("href").slice(1);
-    const target = document.getElementById(targetId);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});
+// Fade-in on scroll using IntersectionObserver
+const fades = document.querySelectorAll(".fade");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+  }
+);
+
+fades.forEach((el) => observer.observe(el));
 
 // Dynamic year in footer
 const yearSpan = document.getElementById("year");
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
-}
+if (yearS
