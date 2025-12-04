@@ -1,196 +1,1258 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harsh Shah | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Optional Google Font -->
+  <title>Harsh Shah – Data Analyst & Power BI Developer</title>
+  <meta name="description"
+    content="Harsh Shah – Data Analyst & Power BI Developer with 4+ years of experience in Power BI, SQL, Python, and cloud data platforms. Specialized in workforce analytics, customer insights, and reporting automation." />
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --bg-alt: #ffffff;
+      --fg: #111827;
+      --muted: #6b7280;
+      --accent: #ec4899;
+      --accent-soft: rgba(236, 72, 153, 0.1);
+      --border-subtle: #e5e7eb;
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 60px rgba(15, 23, 42, 0.14);
+      --max-width: 1040px;
+      --header-height: 64px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Scroll snapping on the main page */
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      scroll-padding-top: var(--header-height);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
+        sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+      padding: 0 16px 0;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    /* Each main section is a snapping "page" */
+    .page-section {
+      scroll-snap-align: start;
+      min-height: calc(100vh - var(--header-height));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 40px 0 24px;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(249, 250, 251, 0.94);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      height: var(--header-height);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      height: 100%;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 14px;
+      background: radial-gradient(circle at 30% 0%,
+          #f9a8d4,
+          #ec4899 45%,
+          #6366f1 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: #ffffff;
+      box-shadow: 0 0 24px rgba(236, 72, 153, 0.4);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .logo-text span:first-child {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo-text span:last-child {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--muted);
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--fg);
+      border-color: rgba(148, 163, 184, 0.4);
+      background: rgba(148, 163, 184, 0.08);
+    }
+
+    .nav-cta {
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(236, 72, 153, 0.7);
+      background: linear-gradient(120deg,
+          rgba(236, 72, 153, 0.16),
+          rgba(236, 72, 153, 0.04));
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 0 18px rgba(236, 72, 153, 0.35);
+      color: #9d174d;
+    }
+
+    .nav-cta span {
+      font-size: 16px;
+      margin-top: -2px;
+    }
+
+    .nav-toggle {
+      display: none;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 6px 10px;
+      font-size: 13px;
+      background: #ffffff;
+      color: var(--fg);
+    }
+
+    /* HERO / INTRO / ABOUT */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero-tagline {
+      margin-bottom: 26px;
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px 4px 4px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(236, 72, 153, 0.4);
+      background: linear-gradient(120deg,
+          rgba(236, 72, 153, 0.12),
+          rgba(249, 250, 251, 0.95));
+      font-size: 12px;
+      color: #9d174d;
+      gap: 8px;
+    }
+
+    .dot-pulse {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+      position: relative;
+    }
+
+    .dot-pulse::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: inherit;
+      border: 1px solid rgba(34, 197, 94, 0.7);
+      opacity: 0.3;
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .hero-vertical-word {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(148, 163, 184, 0.4);
+      align-items: center;
+      padding-right: 10px;
+      border-right: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    .hero-vertical-word span {
+      transform: translateX(2px);
+    }
+
+    .hero-space {
+      margin-top: 24px;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(32px, 6vw, 44px);
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .hero-copy h1 span.highlight {
+      background-image: linear-gradient(120deg, #ec4899, #f97316);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy p {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .hero-pill {
+      padding: 7px 12px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      font-size: 12px;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+    }
+
+    .hero-pill strong {
+      color: var(--fg);
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: var(--radius-pill);
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, #ec4899, #f97316);
+      color: #fef2f2;
+      box-shadow: 0 14px 40px rgba(236, 72, 153, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 50px rgba(236, 72, 153, 0.7);
+    }
+
+    .btn-ghost {
+      background: #ffffff;
+      border-color: var(--border-subtle);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(148, 163, 184, 0.9);
+      background: #f3f4f6;
+      color: var(--fg);
+    }
+
+    .btn-primary span,
+    .btn-ghost span {
+      font-size: 16px;
+      margin-top: -3px;
+    }
+
+    /* PHOTO ON RIGHT IN HERO */
+
+    .hero-photo-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-photo {
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 4px solid #ffffff;
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.35);
+      background: #e5e7eb;
+    }
+
+    .hero-photo {
+      width: 260px;
+      height: 260px;              /* circle size */
+      border-radius: 999px;       /* keep it circular */
+      object-fit: cover;          /* fill the circle */
+      object-position: top center;/* keep your face towards the top */
+      border: 4px solid #ffffff;
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.35);
+      background: #e5e7eb;
+    }
+
+
+    /* SECTION TITLES (for other sections) */
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 18px;
+      gap: 10px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(148, 163, 184, 0.9);
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .project-card {
+      border-radius: 18px;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      padding: 12px;
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      cursor: pointer;
+      transition: transform 0.16s ease, box-shadow 0.16s ease,
+        border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(148, 163, 184, 0.4);
+      border-color: rgba(236, 72, 153, 0.5);
+      background: #fdf2ff;
+    }
+
+    .project-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(107, 114, 128, 0.9);
+    }
+
+    .project-card h3 {
+      font-size: 14px;
+      color: var(--fg);
+    }
+
+    .project-meta-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: rgba(107, 114, 128, 0.9);
+    }
+
+    .project-meta-line a {
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.8);
+      font-size: 11px;
+    }
+
+    /* RESUME */
+
+    .section-inner {
+      width: 100%;
+    }
+
+    .resume-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .resume-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .resume-col {
+      margin: 0;
+      padding: 0;
+    }
+
+    .resume-col:nth-child(2) {
+      border-left: 1px solid var(--border-subtle);
+      padding-left: 20px;
+    }
+
+    .resume-heading {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(148, 163, 184, 0.9);
+    }
+
+    .resume-heading--sub {
+      margin-top: 24px;
+    }
+
+    .resume-item {
+      background: var(--bg-alt);
+      border-radius: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 16px;
+      box-shadow: 0 10px 30px rgba(148, 163, 184, 0.25);
+    }
+
+    .resume-item h4 {
+      margin: 0 0 4px 0;
+      color: var(--fg);
+      font-size: 14px;
+    }
+
+    .resume-item-meta {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .resume-item ul {
+      list-style: disc;
+      padding-left: 18px;
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .resume-item li+li {
+      margin-top: 4px;
+    }
+
+    .resume-skill-group {
+      margin-bottom: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .resume-skill-group h4 {
+      margin: 0 0 2px;
+      font-size: 13px;
+      color: var(--fg);
+    }
+
+    .resume-skill-group p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .resume-edu {
+      margin-bottom: 10px;
+    }
+
+    .resume-edu strong {
+      display: block;
+      font-size: 13px;
+      color: var(--fg);
+    }
+
+    .resume-edu p {
+      margin: 2px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .resume-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* GALLERY */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      aspect-ratio: 4 / 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: rgba(55, 65, 81, 0.9);
+      text-align: center;
+      padding: 6px;
+    }
+
+    .gallery-label {
+      position: absolute;
+      left: 8px;
+      top: 8px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: rgba(15, 23, 42, 0.7);
+      color: #f9fafb;
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.8);
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    .contact-panel {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-alt);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contact-panel h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: var(--fg);
+    }
+
+    .contact-panel p {
+      margin-bottom: 10px;
+    }
+
+    .contact-panel .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+      background: #f9fafb;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .contact-panel .contact-email span {
+      font-size: 14px;
+      margin-top: -2px;
+    }
+
+    .contact-panel .contact-note {
+      font-size: 11px;
+      color: rgba(107, 114, 128, 0.9);
+    }
+
+    .contact-minicards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .contact-minicard {
+      border-radius: 14px;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      padding: 9px 10px;
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .contact-minicard strong {
+      color: var(--fg);
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .socials a {
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: #ffffff;
+      color: var(--muted);
+    }
+
+    .socials a:hover {
+      background: #f3f4f6;
+      color: var(--fg);
+    }
+
+    .project-image {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 240px;      /* tweak this to match your card height */
+      object-fit: cover;  /* nicely crops if aspect ratio differs */
+      display: block;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 12px 16px 14px;
+      font-size: 11px;
+      color: var(--muted);
+      background: #ffffff;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+    }
+
+    .footer-meta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-meta span {
+      white-space: nowrap;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+      }
+
+      .hero-photo-wrapper {
+        order: -1;
+      }
+
+      .hero-photo {
+        width: 220px;
+        height: 220px;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .resume-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resume-col:nth-child(2) {
+        border-left: none;
+        padding-left: 0;
+        padding-top: 20px;
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      header {
+        background: #ffffff;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: var(--header-height) 12px auto;
+        border-radius: 16px;
+        background: #ffffff;
+        box-shadow: 0 22px 60px rgba(15, 23, 42, 0.25);
+        border: 1px solid var(--border-subtle);
+        padding: 10px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-cta {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .hero-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+      }
+
+      .hero-vertical-word {
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.5);
+        padding-bottom: 8px;
+        letter-spacing: 0.3em;
+        justify-content: flex-start;
+      }
+
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header class="navbar">
-    <div class="nav-inner">
-      <div class="logo">Harsh<span>Shah</span></div>
-      <nav class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="logo-mark">H</div>
+        <div class="logo-text">
+          <span>Harsh Shah</span>
+          <span>Data Analyst | Power BI Developer</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle">
+        Menu
+        <span>☰</span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#top">About</a>
         <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle">☰</button>
-    </div>
+        <a href="#contact" class="nav-cta">
+          Let’s talk
+          <span>↗</span>
+        </a>
+      </div>
+    </nav>
   </header>
 
-  <main class="page">
-    <!-- Hero -->
-    <section class="section" id="home">
-      <div class="section-inner">
-        <div class="hero-text fade">
-          <p class="eyebrow">Hi, I’m Harsh 👋</p>
-          <h1>Building clean, responsive web experiences.</h1>
-          <p class="subtitle">
-            Frontend-focused developer who loves simple, fast and user-friendly interfaces.
+  <main>
+    <div class="shell">
+      <!-- INTRO / ABOUT (HERO) -->
+      <section class="hero page-section" id="top">
+        <div>
+          <div class="hero-tagline">
+            <div class="dot-pulse"></div>
+            Data Analyst & Power BI Developer · Open to full-time roles
+          </div>
+
+          <div class="hero-layout">
+            <div class="hero-vertical-word">
+              <span>A</span>
+              <span>B</span>
+              <span>O</span>
+              <span>U</span>
+              <span>T</span>
+            </div>
+
+            <div class="hero-copy">
+              <h1>
+                I turn <span class="highlight">complex data</span> into clear, actionable insights.
+              </h1>
+              <p class="hero-space">
+                I’m a data analytics professional with 4+ years of experience turning raw data into
+                operational and strategic insights. I specialize in building Power BI dashboards,
+                automating reporting, and designing data workflows that actually get used by stakeholders.
+              </p>
+              <p>
+                At Volvo Cars, I’ve worked on workforce and customer analytics—building ETL pipelines,
+                optimizing semantic models, and using Python and NLP on millions of customer interactions
+                to uncover friction points and reduce repeat contact. I enjoy partnering with business
+                teams to translate fuzzy questions into clear metrics, scalable dashboards, and analytics
+                that improve decision-making and operational efficiency.
+              </p>
+
+              <div class="hero-meta">
+                <div class="hero-pill">
+                  <strong>Recent</strong>
+                  · Workforce & Data Analytics Specialist @ Volvo Cars
+                </div>
+                <div class="hero-pill">
+                  <strong>Focus</strong>
+                  · Power BI, Workforce Analytics, Customer Insights, ETL Automation
+                </div>
+              </div>
+
+              <div class="hero-actions">
+                <a href="#projects" class="btn-primary">
+                  View projects
+                  <span>↓</span>
+                </a>
+                <a href="#resume" class="btn-ghost">
+                  View resume
+                  <span>↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Photo on the right -->
+        <div class="hero-photo-wrapper">
+          <img src="images/harsh-shah.jpg" alt="Portrait of Harsh Shah" class="hero-photo" />
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="page-section">
+        <div class="section-header">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">
           </p>
-          <div class="buttons">
-            <a href="#projects" class="btn primary">View Projects</a>
-            <a href="#contact" class="btn ghost">Contact Me</a>
-          </div>
         </div>
-        <div class="hero-photo fade delay">
-          <!-- Put images/profile.jpg in your images folder -->
-          <div class="photo-ring">
-            <img src="images/profile.jpg" alt="Harsh Shah" />
-          </div>
-        </div>
-      </div>
-      <div class="scroll-indicator">Scroll ↓</div>
-    </section>
 
-    <!-- Projects -->
-    <section class="section" id="projects">
-      <div class="section-inner fade">
-        <h2>Projects</h2>
-        <p class="subtitle">
-          A snapshot of what I’ve been building recently.
-        </p>
-        <div class="cards">
-          <article class="card">
-            <h3>Project One</h3>
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-tag">Power BI Dashboard</div>
+            <h3>Crypto Market Monitoring Dashboard</h3>
             <p>
-              Short description of your project. What it does and why it’s useful.
+              A comprehensive crypto analytics dashboard that distills complex market signals, price movement, liquidity, volatility,
+              sentiment, and supply metrics into clean, actionable views for each of the top nine digital assets.
             </p>
-            <p class="tagline">HTML • CSS • JavaScript</p>
-            <div class="card-links">
-              <a href="#" target="_blank">Live Demo</a>
-              <a href="#" target="_blank">Code</a>
+            <div class="project-image">
+              <img src="images/crypto.png" alt="Crypto Market Monitoring Dashboard preview" />
+            </div>
+            <div class="project-meta-line">
+              <span>Python · Power BI</span>
+              <span><a href="https://app.powerbi.com/view?r=eyJrIjoiNjNiNjU1ZTEtZGZlYS00YWJmLThhMjItNTgwOGUzNDU0YzczIiwidCI6IjQ0NWNiODNmLTVkMzctNGVlZS04NWU3LTgwMmIyNjZkZjI0MCIsImMiOjF9"
+                  target="_blank">Power BI ↗</a></span>
             </div>
           </article>
 
-          <article class="card">
-            <h3>Project Two</h3>
+          <article class="project-card">
+            <div class="project-tag">Tableau Dashboard</div>
+            <h3>Bike-Share Analysis</h3>
             <p>
-              Another project that shows off your skills. Replace this with a real one.
+              A Tableau dashboard exploring bike share usage patterns, highlighting overall trip volume, peak riding hours, and
+              seasonal trends. It breaks down rides by customer type, stations, and time of day to uncover which rider
+              segments and routes are most active.
             </p>
-            <p class="tagline">React • API</p>
-            <div class="card-links">
-              <a href="#" target="_blank">Live Demo</a>
-              <a href="#" target="_blank">Code</a>
+            <div class="project-image">
+              <img src="images/tableau-bike-share.png" alt="Bike share Tableau dashboard preview" />
+            </div>
+            <div class="project-meta-line">
+              <span>Tableau</span>
+              <span><a href="https://public.tableau.com/shared/Z25ZXKFST?:display_count=n&:origin=viz_share_link" target="_blank">Tableau ↗</a></span>
             </div>
           </article>
 
-          <article class="card">
-            <h3>Project Three</h3>
+          <article class="project-card">
+            <div class="project-tag">NLP · Sentiment Analysis</div>
+            <h3>Amazon Customer Sentiment Analysis</h3>
             <p>
-              Keep it short and clear. Focus on what you built and the tech used.
+              Analyzed customer reviews for sneaker brands using Python and visualization tools to
+              identify sentiment trends and key themes, supporting product and marketing decisions.
             </p>
-            <p class="tagline">Node.js • Express</p>
-            <div class="card-links">
-              <a href="#" target="_blank">Live Demo</a>
-              <a href="#" target="_blank">Code</a>
+            <div class="project-image">
+              <img src="images/amazon-customer.png" alt="Amazon Customer Sentiment Analysis preview" />
+            </div>
+            <div class="project-meta-line">
+              <span>Python · NLP · Gephi · Data Viz</span>
+              <span><a href="https://github.com/Harsh-R-Shah/Amazon-Customer-Sentiment-Analysis" target="_blank">GitHub
+                  ↗</a></span>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
 
-    <!-- Skills -->
-    <section class="section" id="skills">
-      <div class="section-inner fade">
-        <h2>Skills</h2>
-        <p class="subtitle">
-          Technologies I work with and enjoy using.
-        </p>
-        <div class="skills-grid">
-          <div class="skill-column">
-            <h3>Frontend</h3>
-            <ul>
-              <li>HTML5 / CSS3</li>
-              <li>JavaScript (ES6+)</li>
-              <li>React</li>
-              <li>Responsive Design</li>
-            </ul>
-          </div>
-          <div class="skill-column">
-            <h3>Backend</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>REST APIs</li>
-            </ul>
-          </div>
-          <div class="skill-column">
-            <h3>Tools</h3>
-            <ul>
-              <li>Git & GitHub</li>
-              <li>VS Code</li>
-              <li>GitHub Pages / Netlify</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="section" id="about">
-      <div class="section-inner fade">
-        <h2>About Me</h2>
-        <p class="subtitle">
-          A bit about who I am and how I like to build things.
-        </p>
-        <div class="about-layout">
-          <div class="about-main">
+          <article class="project-card">
+            <div class="project-tag">Classification · Text Analytics</div>
+            <h3>Amazon Fake Review Detection</h3>
             <p>
-              I’m a web developer who enjoys turning ideas into interactive experiences
-              on the browser. I care about code that’s clean, simple and easy to maintain.
+              Built a classifier to detect fraudulent reviews, experimenting with feature engineering
+              and model selection to improve detection performance.
             </p>
-            <p>
-              I’m always experimenting with new tools, frameworks and side projects to
-              push my skills forward.
-            </p>
-          </div>
-          <div class="about-side">
-            <h3>Quick Facts</h3>
-            <ul>
-              <li>📍 Based in: your city</li>
-              <li>💼 Open to: internships / roles / freelance</li>
-              <li>🎯 Interests: UI/UX, frontend, side projects</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="project-image">
+              <img src="images/fake-review.png" alt="Amazon Fake Review Detection preview" />
+            </div>
+            <div class="project-meta-line">
+              <span>Python · ML · Scikit-learn</span>
+              <span><a href="https://github.com/Harsh-R-Shah/Amazon-Fake-Review-Detection" target="_blank">GitHub
+                  ↗</a></span>
+            </div>
+          </article>
 
-    <!-- Contact -->
-    <section class="section" id="contact">
-      <div class="section-inner fade">
-        <h2>Contact</h2>
-        <p class="subtitle">
-          Want to collaborate or just say hi? I’d love to hear from you.
-        </p>
-        <div class="contact-box">
-          <a href="mailto:youremail@example.com" class="btn primary">
-            Email Me
-          </a>
-          <div class="social">
-            <a href="#" target="_blank">GitHub</a>
-            <a href="#" target="_blank">LinkedIn</a>
-            <a href="#" target="_blank">Twitter</a>
+          <article class="project-card">
+            <div class="project-tag">Time series & forecasting</div>
+            <h3>COVID-19 Predictive Analysis</h3>
+            <p>
+              Built predictive models and visualizations to analyze COVID-19 trends and forecast
+              case trajectories across regions.
+            </p>
+            <div class="project-image">
+              <img src="images/covid-19.png" alt="COVID-19 Predictive Analysis preview" />
+            </div>
+            <div class="project-meta-line">
+              <span>Python · Forecasting · Data Viz</span>
+              <span><a href="https://github.com/Harsh-R-Shah/COVID19-PREDICTIVE-ANALYSIS" target="_blank">GitHub
+                  ↗</a></span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-tag">Social Media Analytics</div>
+            <h3>Tweets Analysis</h3>
+            <p>
+              Performed sentiment and topic analysis on tweets to uncover patterns and engagement
+              around key events and hashtags.
+            </p>
+            <div class="project-image">
+              <img src="images/tweet.png" alt="Tweets Analysis preview" />  
+            </div>
+            <div class="project-meta-line">
+              <span>Python · NLP · Jupyter</span>
+              <span><a href="https://github.com/Harsh-R-Shah/Tweets-Analysis" target="_blank">GitHub ↗</a></span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- RESUME -->
+      <section id="resume" class="page-section">
+        <div class="section-inner">
+          <div class="resume-header">
+            <h2 class="section-title">Resume</h2>
+            <p class="section-subtitle">A snapshot of my experience, skills, and education.</p>
+          </div>
+
+          <div class="resume-grid">
+            <!-- LEFT COLUMN -->
+            <div class="resume-col">
+              <h3 class="resume-heading">Experience</h3>
+
+              <article class="resume-item">
+                <h4>Workforce & Data Analytics Specialist</h4>
+                <span class="resume-item-meta">Volvo Cars · Mahwah, NJ · Oct 2021 — Present</span>
+                <ul>
+                  <li>Achieved <strong>$257K annual savings</strong> by identifying inefficiencies and optimizing
+                    workforce allocation.</li>
+                  <li>Analyzed <strong>2M+ customer interactions</strong> using Python & NLP to surface friction points
+                    and reduce repeat contact rate.</li>
+                  <li>Built automated ETL pipelines with <strong>Snowflake</strong> and <strong>Azure</strong>,
+                    improving data refresh latency and reliability.</li>
+                </ul>
+              </article>
+
+              <article class="resume-item">
+                <h4>Data Analyst Intern</h4>
+                <span class="resume-item-meta">Hacera Inc · Jul 2021 — Oct 2021</span>
+                <ul>
+                  <li>Automated ingestion and transformation of <strong>50+ datasets</strong> to support internal
+                    analytics and reporting.</li>
+                  <li>Performed exploratory analysis on multi-million-record datasets to support product and
+                    go-to-market decisions.</li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="resume-col">
+              <h3 class="resume-heading">Skills</h3>
+
+              <div class="resume-skill-group">
+                <h4>Business Intelligence</h4>
+                <p>Power BI (DAX, Power Query), Tableau, Semantic Modeling, KPI Design, Dashboard UX.</p>
+              </div>
+
+              <div class="resume-skill-group">
+                <h4>Data Analysis</h4>
+                <p>SQL, Python (Pandas, NumPy), EDA, Statistical Analysis, Hypothesis Testing.</p>
+              </div>
+
+              <div class="resume-skill-group">
+                <h4>ETL & Data Engineering</h4>
+                <p>Snowflake, Azure ADF, Azure Synapse, Databricks, Data Quality & Monitoring.</p>
+              </div>
+
+              <h3 class="resume-heading resume-heading--sub">Education</h3>
+
+              <div class="resume-edu">
+                <strong>Stevens Institute of Technology</strong>
+                <p>Master of Engineering · May 2021</p>
+              </div>
+
+              <div class="resume-edu">
+                <strong>K. J. Somaiya College of Engineering</strong>
+                <p>B.Tech in Information Technology · May 2018</p>
+              </div>
+
+              <div class="resume-actions">
+                <a href="Harsh_Shah_Resume.pdf" class="btn-primary" target="_blank">View full resume ↗</a>
+                <a href="Harsh_Shah_Resume.pdf" class="btn-ghost" download>Download PDF ↓</a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <footer class="footer">
-        © <span id="year"></span> Harsh Shah
-      </footer>
-    </section>
+      </section>
+
+
+<!-- CONTACT -->
+      <section id="contact" class="page-section">
+        <div class="section-header">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">
+            Whether you want to discuss a role, a project, or simply connect, I’d love to hear from you.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="contact-panel">
+            <h3>Get in touch</h3>
+            <p>
+              I'm open to opportunities in Data Analytics, BI Development, and Data Engineering.
+              If you're looking for someone who can build dashboards, automate reporting,
+              analyze datasets, or support data strategy, feel free to reach out.
+            </p>
+
+            <div class="contact-email">
+              <span>✉</span>
+              <a href="mailto:harsh.shah9430@gmail.com">
+                harsh.shah9430@gmail.com
+              </a>
+              <div class="socials">
+                <a href="https://github.com/Harsh-R-Shah" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/harshshah9430" target="_blank" rel="noreferrer">LinkedIn</a>
+              </div>
+            </div>
+
+
+            <div class="contact-note">
+              Please include a brief note about the role or project and how I can help.
+            </div>
+
+            <div class="contact-minicards">
+              <div class="contact-minicard">
+                <strong>What I can help with</strong>
+                <span>Power BI dashboards, SQL/Python analysis, ETL/ELT pipelines, reporting automation.</span>
+              </div>
+              <div class="contact-minicard">
+                <strong>Industry experience</strong>
+                <span>Workforce analytics, customer insights, operational analytics, performance reporting.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
   </main>
 
-  <script src="script.js"></script>
+  <footer>
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Harsh Shah. Crafted with care.</span>
+      <div class="footer-meta">
+        <span>Edition 2025</span>
+        <span>Local time: <span id="localTime"></span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      navToggle.innerHTML = navLinks.classList.contains("show")
+        ? 'Close <span>×</span>'
+        : 'Menu <span>☰</span>';
+    });
+
+    // Close mobile menu when clicking a link
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (navLinks.classList.contains("show")) {
+          navLinks.classList.remove("show");
+          navToggle.innerHTML = 'Menu <span>☰</span>';
+        }
+      });
+    });
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Local time (simple display)
+    function updateTime() {
+      const now = new Date();
+      const options = {
+        hour: "2-digit",
+        minute: "2-digit",
+      };
+      document.getElementById("localTime").textContent = now.toLocaleTimeString([], options);
+    }
+
+    updateTime();
+    setInterval(updateTime, 60000);
+  </script>
 </body>
+
 </html>
